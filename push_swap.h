@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/18 17:06:35 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:47:44 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ typedef struct s_list
     struct s_list	*next;
 } t_list;
 int     main(int argc, char **argv);
-void	ft_parsing(char *arg);
+int	ft_parsing(char *arg);
 #endif
