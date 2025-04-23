@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/22 16:49:39 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:51:04 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int main(int argc, char **argv)
 { 
     int i;
 	int nums;
-	t_list *stack_a;
+	t_list **stack_a;
+	t_list **stack_b;
 
 	i = 0;
 	nums = NULL;
@@ -40,7 +41,7 @@ int main(int argc, char **argv)
     while (argv[i] != NULL)
     {
         nums = ft_parsing(argv[i]);
-        //meter en stack
+        
 		i++;
         
     }

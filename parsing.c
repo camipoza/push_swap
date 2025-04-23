@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/22 17:02:23 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:58:58 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ post- atoi
 - no pasan del int max   2147483647/ -2147483648
 - nums no repetidos */
 
-char	ft_checkdigit(char *str) 
+int	ft_checknum(char *str) 
 {
 	while (*str)
 	{
@@ -27,24 +27,41 @@ char	ft_checkdigit(char *str)
 			str++;
 		if(!str)
 			return (0);
-		if (ft_isdigit(str))
-				return (1);
-			else
-				return(0);
-	
+		while (ft_isdigit(str))
+			str++;
+		if(!ft_isdigit(str))
+			return(0);
 	}
-	
-		
+	return (1);
 }
-int	ft_parsing(char *arg)
+
+int	ft_checklong(int n)
 {
-	while (*arg)
+	if (n < -2147483648 || n > 2147483647)
+		return (0);
+	else
+		return(1);
+}
+	
+t_list	ft_parsing(char **arg, t_list **a)
+{	
+	int	n;
+	t_list *nodo;
+
+	n = 0;
+	while (**arg)
     {
-		if (!ft_checksign(arg))
+		if (!ft_checknum(arg))
 			error;
-		if (!ft_isdigit(arg))
+		n = ft_atoi(arg);
+		if (!n)
 			error;
-		if (!ft_atoi(arg))
+		if (!ft_checklong(n))
 			error;
-	}		
+		nodo = ft_lstnew(n);
+		a = ft_lstadd_back(a, nodo);
+		arg++;
+	}
+    //check duplicados
+	return (n);	
 }
