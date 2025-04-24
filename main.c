@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/23 18:51:04 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:09:19 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 int main(int argc, char **argv)
 { 
-    int i;
+ /*    int i;
 	int nums;
 	t_list **stack_a;
 	t_list **stack_b;
@@ -40,10 +40,23 @@ int main(int argc, char **argv)
         return (1);
     while (argv[i] != NULL)
     {
-        nums = ft_parsing(argv[i]);
+        stack_a = ft_parsing(argv[i]);
         
 		i++;
         
-    }
+    } */
+    int n  = 5;
+	t_list *a;
+    a = ft_putinstack(n, a);
+	printf("%d\n", (int *)a->next->content);
+    
     
 }
+    t_list *ft_putinstack(int n, t_list *a)
+    {
+    	t_list	*node;
+        
+	    node = ft_lstnew (n);
+	    ft_lstadd_back (a, node);
+        return (a);
+    }
