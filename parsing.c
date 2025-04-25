@@ -6,12 +6,11 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/24 19:23:42 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/25 13:09:36 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <libft.h>
 
 /* *** 2. PARSEO ***
 - comprobar que si hay signos (+/-) no se repiten 
@@ -45,12 +44,13 @@ int	ft_checklong(int n)
 		return(1);
 }
 	
-t_list	**ft_parsing(char **arg)
+t_list	*ft_parsing(char **arg)
 {	
 	int	n;
-	t_list **a;
+	t_list *a;
 
 	n = 0;
+	a = NULL;
 	while (**arg)
     {
 		if (!ft_checknum(arg))
@@ -61,17 +61,17 @@ t_list	**ft_parsing(char **arg)
 		if (!ft_checklong(n))
 			ft_error_oops();
 		a = ft_putinstack(n, a);
+        printf("%d\n", a->next->content);
 		arg++;
 	}
     //check duplicados
 	return (a);	
 }
-t_list **ft_putinstack(int n, t_list **a)
+t_list *ft_putinstack(int num, t_list *a)
 {
-	t_list	*nodo;
-	t_list	**list;
+	t_list	*node;
 	
-	list = &a;
-	nodo = ft_lstnew(n);
-	ft_lstadd_back(list, nodo);
+	node = ft_lstnew(num);
+	ft_lstadd_back(&a, node);
+	return(a);
 }
