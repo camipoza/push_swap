@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 16:07:21 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:39:44 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ t_list	*ft_parsing(char **arg)
 		if (!ft_checklong(n))
 			ft_error_oops();
 		a = ft_putinstack(n, a);
-        printf("%d\n", a->content);
 		arg++;
-		// a = a->next;
 	}
     //check duplicados
 	return (a);	
@@ -78,18 +76,17 @@ int	ft_check_dup(t_list *stack_a)
 {
 	t_list *current;
 	t_list *comp;
-	printf("HOla");
 	current = stack_a;
 
-	while(current->next != NULL)
+	while(current != NULL)
 	{
 		comp = current->next;
 		printf("Current %d\n", current->content);
-		while(comp->next != NULL)
+		while(comp != NULL)
 		{
 			printf("comp %d\n", comp->content);
 			if(current->content == comp->content)
-				return (0);
+       			ft_error_oops();
 			comp = comp->next;
 		}	
 		current = current->next;

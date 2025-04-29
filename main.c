@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 16:07:38 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:52:05 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     if (argc < 2)
         return (1);
     stack_a = ft_parsing(argv);
-    // printf("HOLA %d\n", stack_a->content);
-    if(!ft_check_dup(stack_a))
-        ft_error_oops();
+    ft_loop_list(stack_a);
+    
+    ft_check_dup(stack_a);
 }

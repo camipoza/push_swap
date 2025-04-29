@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 15:35:45 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:52:23 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,15 @@ int	ft_checklong(long n)
 		return (0);
 	else
 		return(1);
+}
+void	ft_loop_list(t_list *stack)
+{
+	t_list *p_lst;
+
+	p_lst = stack;
+	while(p_lst->next != NULL)
+	{
+		p_lst = p_lst->next;
+		printf("%d\n", p_lst->content);
+	}
 }
