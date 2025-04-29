@@ -6,11 +6,11 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 20:05:14 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/09 20:05:25 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:34:41 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-*** 4. MOVIMIENTOS ***
+/* *** 4. MOVIMIENTOS ***
 - sa:  Intercambia los dos primeros elementos del stack a
 - sb:  Intercambia los dos primeros elementos del stack b
 - ss: sa y sb a la vez
@@ -21,4 +21,4 @@
 - rr: ra y rb a la vez 
 - rra: Desplaza hacia abajo todos los elementos del stack a una posición, de forma que el último elemento se convierte en el primero.
 - rrb: Desplaza hacia abajo todos los elementos del stack b una posición, de forma que el último elemento se convierte en el primero.
-- rrr: rra y rrb
+- rrr: rra y rrb */

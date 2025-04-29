@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/25 13:09:36 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:54:26 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,25 @@ post- atoi
 
 int	ft_checknum(char *str) 
 {
+	printf("str %s\n", str);
 	while (*str)
 	{
-		if (str == '-' || str == '+')
+		if (*str == '-' || *str == '+')
 			str++;
+			
 		if(!str)
 			return (0);
-		while (ft_isdigit(str))
+		
+		printf("A: %c\n", *str);
+		while (ft_isdigit(*str))
 			str++;
-		if(!ft_isdigit(str))
+		if(!ft_isdigit(*str) && (*str) != '\0')
 			return(0);
 	}
 	return (1);
 }
 
-int	ft_checklong(int n)
+int	ft_checklong(long n)
 {
 	if (n < -2147483648 || n > 2147483647)
 		return (0);
@@ -46,23 +50,26 @@ int	ft_checklong(int n)
 	
 t_list	*ft_parsing(char **arg)
 {	
-	int	n;
+	long	n;
 	t_list *a;
 
 	n = 0;
 	a = NULL;
-	while (**arg)
+	
+	arg++;
+	while (*arg)
     {
-		if (!ft_checknum(arg))
-			ft_error_oops();
-		n = ft_atoi(arg);
+		if (!ft_checknum(*arg))
+			ft_printf("kk\n");
+		n = ft_atol(*arg);
 		if (!n)
 			ft_error_oops();
 		if (!ft_checklong(n))
 			ft_error_oops();
 		a = ft_putinstack(n, a);
-        printf("%d\n", a->next->content);
+        printf("%d\n", a->content);
 		arg++;
+		a = a->next;
 	}
     //check duplicados
 	return (a);	

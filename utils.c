@@ -6,16 +6,14 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/24 17:28:40 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 12:22:17 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ft_error_oops()
 {
 	ft_printf("Error\n");
-    exit(1);
-}
-t_list  **ft_putinstack(**stack_a, n)
-{
-    
+    exit(EXIT_SUCCESS);
 }

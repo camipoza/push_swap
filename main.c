@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/25 13:08:38 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 11:34:27 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	t_list *stack_b;
 
 	i = 0;
-	nums = NULL;
+	nums = 0;
     stack_a = NULL;
     if (argc < 2)
         return (1);
