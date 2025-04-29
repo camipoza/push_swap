@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 12:54:26 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 16:07:21 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,6 @@ int	ft_checknum(char *str)
 	return (1);
 }
 
-int	ft_checklong(long n)
-{
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return(1);
-}
-	
 t_list	*ft_parsing(char **arg)
 {	
 	long	n;
@@ -69,7 +61,7 @@ t_list	*ft_parsing(char **arg)
 		a = ft_putinstack(n, a);
         printf("%d\n", a->content);
 		arg++;
-		a = a->next;
+		// a = a->next;
 	}
     //check duplicados
 	return (a);	
@@ -81,4 +73,26 @@ t_list *ft_putinstack(int num, t_list *a)
 	node = ft_lstnew(num);
 	ft_lstadd_back(&a, node);
 	return(a);
+}
+int	ft_check_dup(t_list *stack_a)
+{
+	t_list *current;
+	t_list *comp;
+	printf("HOla");
+	current = stack_a;
+
+	while(current->next != NULL)
+	{
+		comp = current->next;
+		printf("Current %d\n", current->content);
+		while(comp->next != NULL)
+		{
+			printf("comp %d\n", comp->content);
+			if(current->content == comp->content)
+				return (0);
+			comp = comp->next;
+		}	
+		current = current->next;
+	}
+	return(1);
 }

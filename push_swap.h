@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 12:49:40 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:58:03 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ t_list *ft_putinstack(int num, t_list *a);
 int	ft_checklong(long n);
 int	ft_checknum(char *str);
 void	ft_error_oops();
+int	ft_check_dup(t_list *stack_a);
+
 
 #endif
