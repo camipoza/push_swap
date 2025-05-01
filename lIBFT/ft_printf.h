@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/01 16:36:54 by cpoza-ra         ###   ########.fr       */
+/*   Created: 2025/02/18 16:46:26 by cpoza-ra          #+#    #+#             */
+/*   Updated: 2025/02/21 14:32:07 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <stdarg.h>
 
-void	ft_error_oops()
-{
-	ft_printf("Error\n");
-    exit(EXIT_SUCCESS);
-}
-int	ft_checklong(long n)
-{
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return(1);
-}
-void	ft_loop_list(t_list *stack)
-{
-	t_list *p_lst;
+int	ft_printf(char const *str, ...);
+int	ft_percent(va_list arg, char str);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putptr(void *p);
+int	ft_putnbr(int i);
+int	ft_puthex(size_t x, char str);
+int	ft_putunsign(unsigned int num);
 
-	p_lst = stack;
-	while(p_lst->next != NULL)
-	{
-		p_lst = p_lst->next;
-		printf("%d\n", p_lst->content);
-	}
-}
+#endif

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/01 16:36:54 by cpoza-ra         ###   ########.fr       */
+/*   Created: 2025/02/18 15:59:06 by cpoza-ra          #+#    #+#             */
+/*   Updated: 2025/02/21 15:16:30 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
+#include <stdio.h>
+#include <unistd.h>
 
-void	ft_error_oops()
+int	ft_putptr(void *p)
 {
-	ft_printf("Error\n");
-    exit(EXIT_SUCCESS);
-}
-int	ft_checklong(long n)
-{
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return(1);
-}
-void	ft_loop_list(t_list *stack)
-{
-	t_list *p_lst;
+	int	counter2;
 
-	p_lst = stack;
-	while(p_lst->next != NULL)
-	{
-		p_lst = p_lst->next;
-		printf("%d\n", p_lst->content);
-	}
+	if (!p)
+		return (write(1, "(nil)", 5));
+	counter2 = 0;
+	counter2 = ft_putstr("0x");
+	counter2 += ft_puthex((size_t)p, 'x');
+	return (counter2);
 }
+/*int main()
+{
+	void *p;
+	int counter2;
+
+	p = NULL;
+	counter2 = ft_putptr(p);
+	printf("\nlen: %d\n", counter2);
+	printf("%p",p);
+	return(0);
+}*/

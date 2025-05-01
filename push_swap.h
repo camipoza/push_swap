@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 17:51:44 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/01 17:30:32 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "./LIBFT/libft.h"
-#include "./pRINTF/ft_printf.h"
+#include "./lIBFT/libft.h"
 
 int	main(int argc, char **argv);
 t_list	*ft_parsing(char **arg);
@@ -26,6 +25,11 @@ int	ft_checknum(char *str);
 void	ft_error_oops();
 int	ft_check_dup(t_list *stack_a);
 void	ft_loop_list(t_list *stack);
+void    ft_sa(t_list **stack_a);
+void    ft_sb(t_list **stack_b);
+void    ft_ss(t_list **stack_a, t_list **stack_b);
+void    ft_pa(t_list **stack_b, t_list **stack_a);
+void    ft_pb(t_list **stack_a, t_list **stack_b);
 
 
 #endif

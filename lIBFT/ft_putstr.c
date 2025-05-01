@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/01 16:36:54 by cpoza-ra         ###   ########.fr       */
+/*   Created: 2025/02/16 17:08:15 by cpoza-ra          #+#    #+#             */
+/*   Updated: 2025/03/04 19:44:16 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
+#include <unistd.h>
 
-void	ft_error_oops()
+int	ft_putstr(char *str)
 {
-	ft_printf("Error\n");
-    exit(EXIT_SUCCESS);
-}
-int	ft_checklong(long n)
-{
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return(1);
-}
-void	ft_loop_list(t_list *stack)
-{
-	t_list *p_lst;
+	int	counter2;
 
-	p_lst = stack;
-	while(p_lst->next != NULL)
+	counter2 = 0;
+	if (!str)
+		return (write(1, "(null)", 6));
+	while (*str)
 	{
-		p_lst = p_lst->next;
-		printf("%d\n", p_lst->content);
+		counter2 += ft_putchar(*str);
+		if (counter2 < 0)
+			return (-1);
+		str++;
 	}
+	return (counter2);
 }
+
+/*int	main()
+{
+	int count2;
+	count2 = ft_putstr(NULL);
+	return(0);
+}*/

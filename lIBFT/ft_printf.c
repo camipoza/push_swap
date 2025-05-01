@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/01 16:36:54 by cpoza-ra         ###   ########.fr       */
+/*   Created: 2025/02/16 16:54:21 by cpoza-ra          #+#    #+#             */
+/*   Updated: 2025/04/24 17:19:47 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
+#include <stdio.h>
 
-void	ft_error_oops()
+int	ft_printf(char const *str, ...)
 {
-	ft_printf("Error\n");
-    exit(EXIT_SUCCESS);
-}
-int	ft_checklong(long n)
-{
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return(1);
-}
-void	ft_loop_list(t_list *stack)
-{
-	t_list *p_lst;
+	int		count;
+	va_list	args;
 
-	p_lst = stack;
-	while(p_lst->next != NULL)
+	count = 0;
+	va_start(args, str);
+	while (*str)
 	{
-		p_lst = p_lst->next;
-		printf("%d\n", p_lst->content);
+		if (*str == '%')
+		{
+			str++;
+			count += ft_percent(args, *str);
+		}
+		else
+			count += ft_putchar(*str);
+		if (*str)
+			str++;
 	}
+	va_end(args);
+	return (count);
 }
+

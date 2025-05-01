@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 17:52:05 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/01 15:24:12 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main(int argc, char **argv)
 	i = 0;
 	nums = 0;
     stack_a = NULL;
+    stack_b = NULL;
     if (argc < 2)
         return (1);
     stack_a = ft_parsing(argv);
