@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/02 13:11:17 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/02 16:35:44 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 *** 4. MOVS ***
 
 *** 5. ALGORITMO DE ORDENACION ***
+- check si están ordeandos
+-ordenar 2, 3, 4
 - k sort
  */
 
@@ -42,5 +44,6 @@ int main(int argc, char **argv)
     stack_a = ft_parsing(argv);    
     ft_check_dup(stack_a);
     ft_loop_list(stack_a);
-    //ksort
+    //if(!ft_check_order(**stack_a))
+        //sort
 }
