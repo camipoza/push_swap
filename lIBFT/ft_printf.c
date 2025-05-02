@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 16:54:21 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/24 17:19:47 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/02 13:19:36 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (count);
 }
-

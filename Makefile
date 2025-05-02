@@ -6,7 +6,7 @@
 #    By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 18:20:36 by cpoza-ra          #+#    #+#              #
-#    Updated: 2025/05/01 17:43:38 by cpoza-ra         ###   ########.fr        #
+#    Updated: 2025/05/02 13:12:33 by cpoza-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 CC = cc 
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I. #directorio de cabeceras (dir actual)
-SRC_FILES = main.c parsing.c utils.c movements.c 
+SRC_FILES = main.c parsing.c utils.c movements_push.c movements_swap.c movements_rotate.c movements_rev_rotate.c 
 OBJ_FILES = $(SRC_FILES:%.c=%.o)
 
 LIBFT_DIR = lIBFT
