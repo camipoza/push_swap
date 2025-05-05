@@ -6,7 +6,7 @@
 #    By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 18:20:36 by cpoza-ra          #+#    #+#              #
-#    Updated: 2025/05/02 16:03:45 by cpoza-ra         ###   ########.fr        #
+#    Updated: 2025/05/05 17:04:46 by cpoza-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,18 @@ INCLUDE = -I. #directorio de cabeceras (dir actual)
 SRC_FILES = main.c parsing.c utils.c movements_push.c movements_swap.c movements_rotate.c movements_rev_rotate.c order.c
 OBJ_FILES = $(SRC_FILES:%.c=%.o)
 
-LIBFT_DIR = lIBFT
-LIBFT = lIBFT/libft.a
+LIBFT_DIR = LIBFT
+LIB = $(LIBFT_DIR)/libft.a
 
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ_FILES) # para evitar relink, solo hace cambios en la lib si algun archivo .o ha cambiado
-	 	 $(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME)
+$(NAME): $(LIB) $(OBJ_FILES) # para evitar relink, solo hace cambios en la lib si algun archivo .o ha cambiado
+	$(CC) $(CFLAGS) $(OBJ_FILES) $(LIB) -o $(NAME)
 
-$(LIBFT): 
-		@make bonus -C $(LIBFT_DIR)
+$(LIB):
+	@make all -C $(LIBFT_DIR)
+	@make bonus -C $(LIBFT_DIR)
 
 %.o: %.c #compilar archivos .c en .o
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -38,7 +39,7 @@ clean: #limpiar archivos .o
 	
 fclean: #limpiar todo 
 	rm -f $(NAME) $(OBJ_FILES)
-	rm -f $(LIBFT) 
+	rm -f $(LIB) 
 	@make fclean -C $(LIBFT_DIR)
 
 re: fclean all #recompilar

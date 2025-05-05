@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/02 13:25:47 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:30:46 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "./lIBFT/libft.h"
+# include "./LIBFT/libft.h"
+# include "./LIBFT/ft_printf.h"
 
 int		main(int argc, char **argv);
 t_list	*ft_parsing(char **arg);
@@ -36,5 +37,8 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rra(t_list **stack_a);
 void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
+int		ft_check_order(t_list **stack_a);
+void    ft_sort(t_list **stack_a);
+
 
 #endif

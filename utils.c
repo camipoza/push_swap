@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/02 13:27:54 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:13:55 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,24 @@ void	ft_error_oops(void)
 	exit(EXIT_SUCCESS);
 }
 
-int	ft_checklong(long n)
+int	ft_check_dup(t_list *stack_a)
 {
-	if (n < -2147483648 || n > 2147483647)
-		return (0);
-	else
-		return (1);
+	t_list	*current;
+	t_list	*comp;
+
+	current = stack_a;
+	while (current != NULL)
+	{
+		comp = current->next;
+		while (comp != NULL)
+		{
+			if (current->content == comp->content)
+				ft_error_oops ();
+			comp = comp->next;
+		}
+		current = current->next;
+	}
+	return (1);
 }
 
 void	ft_loop_list(t_list *stack)

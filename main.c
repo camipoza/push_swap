@@ -6,22 +6,13 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/02 16:35:44 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:33:04 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* *** 1. COMPROBACIONES INICIALES ***
-- ARGC > 2
-- crear stacks
-
-*** 2. PARSEO ***
-
-*** 3. METER EN NODOS ***
-
-*** 4. MOVS ***
-
+/*
 *** 5. ALGORITMO DE ORDENACION ***
 - check si están ordeandos
 -ordenar 2, 3, 4
@@ -30,12 +21,10 @@
 
 int main(int argc, char **argv)
 { 
-    int i;
 	int nums;
 	t_list *stack_a;
 	t_list *stack_b;
 
-	i = 0;
 	nums = 0;
     stack_a = NULL;
     stack_b = NULL;
@@ -43,7 +32,7 @@ int main(int argc, char **argv)
         return (1);
     stack_a = ft_parsing(argv);    
     ft_check_dup(stack_a);
-    ft_loop_list(stack_a);
-    //if(!ft_check_order(**stack_a))
-        //sort
+    // ft_loop_list(stack_a);
+    if(!ft_check_order(&stack_a))
+		ft_sort(stack_a);
 }
