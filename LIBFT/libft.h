@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:28:46 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/05 16:41:16 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:50:07 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		ft_toupper(int c);
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 t_list	*ft_lstnew(int content);

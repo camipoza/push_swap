@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 18:17:10 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/04/29 11:50:02 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:51:02 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_list	*ft_lstnew(int content) //crea un nodo
 		return (NULL);
 	new_node->content = content;
 	new_node->next = NULL;
+	new_node->index = 0;
 	return (new_node);
 }
 
