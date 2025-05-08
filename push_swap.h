@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/06 16:51:49 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:42:58 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_checklong(long n);
 int		ft_checknum(char *str);
 void	ft_error_oops(void);
 int		ft_check_dup(t_list *stack_a);
-void	ft_loop_list(t_list *stack);
+void	ft_print_list(t_list *stack);
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
@@ -37,6 +37,7 @@ void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rra(t_list **stack_a);
 void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
+t_list	*ft_almostlastnode(t_list *lst);
 int		ft_check_order(t_list **stack_a);
 void    ft_sort(t_list **stack_a);
 void	ft_sort_three(t_list *stack_a);

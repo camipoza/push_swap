@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:52:05 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/01 17:28:09 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:17:47 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void    ft_pa(t_list **stack_b, t_list **stack_a)
 	if(ft_lstsize(*stack_b) == 0)
 		return;
     ft_push(stack_b, stack_a);
-	ft_printf("%s\n, pa");
+	ft_printf("pa\n");
 }
 void    ft_pb(t_list **stack_a, t_list **stack_b)
 {
 	if(ft_lstsize(*stack_a) == 0)
 		return;
     ft_push(stack_a, stack_b);
-	ft_printf("%s\n, pb");
+	ft_printf("pb\n");
 }
 

@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:45:07 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/02 12:51:32 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:17:12 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ static void  ft_rotate(t_list **stack)
 void ft_ra(t_list **stack_a)
 {
 	ft_rotate(stack_a);
-	ft_printf("%s\n, ra");
+	ft_printf("ra\n");
 }
 
 void ft_rb(t_list **stack_b)
 {
 	ft_rotate(stack_b);
-	ft_printf("%s\n, rb");
+	ft_printf("rb\n");
 
 }
 
@@ -41,5 +41,5 @@ void ft_rr(t_list **stack_a, t_list **stack_b)
 {
 	ft_rotate(stack_a);
 	ft_rotate(stack_b);
-	ft_printf("%s\n, rb");
+	ft_printf("rr\n");
 }

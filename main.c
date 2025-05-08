@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/06 18:55:10 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/08 19:06:32 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int main(int argc, char **argv)
     stack_a = ft_parsing(argv);    
     ft_check_dup(stack_a);
     if(!ft_check_order(&stack_a))
-		ft_sort(&stack_a);
-    ft_loop_list(stack_a);
+		  ft_sort(&stack_a);
+    ft_print_list(stack_a);
 }
