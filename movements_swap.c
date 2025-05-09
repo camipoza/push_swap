@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:00:21 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/08 18:18:36 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/09 15:54:53 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 static void    ft_swap(t_list **stack)
 {
-    t_list *aux;
-    t_list *aux2;
+    int aux;
+    int aux2;
     
 	if(ft_lstsize(*stack) < 2)
 		return;
-    aux = *stack;
-    aux2 = aux->next;
-
-    *stack = aux2;
+    aux = (*stack)->content;
+    aux2 = (*stack)->next->content;
+	
+	/* aux = aux2->next;
 	aux2->next = aux;
+    ft_lstadd_front(stack, aux2);
+	ft_print_list(*stack);
+	(*stack)->next = (*stack)->next->next; */
 }
 void    ft_sa(t_list **stack_a)
 {
 	ft_swap(stack_a);
 	ft_printf("sa\n");
+	
 }
 
 void    ft_sb(t_list **stack_b)

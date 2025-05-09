@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:45:28 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/08 19:06:15 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/09 14:37:12 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ static void  ft_rev_rotate(t_list **stack)
 	aux = ft_almostlastnode(*stack);
     last = ft_lstlast(*stack);
     ft_lstadd_front(stack, last);
-	aux->next = NULL;
+	aux->next = NULL;	
 }
 void ft_rra(t_list **stack_a)
 {
 	ft_rev_rotate(stack_a);
 	ft_printf("rra\n");
+	//ft_print_list(*stack_a);
 }
 void ft_rrb(t_list **stack_b)
 {

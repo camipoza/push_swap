@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/08 18:42:58 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/09 14:48:18 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "./LIBFT/libft.h"
 # include "./LIBFT/ft_printf.h"
 
-int		main(int argc, char **argv);
 t_list	*ft_parsing(char **arg);
 t_list	*ft_putinstack(int num, t_list *a);
 int		ft_checklong(long n);
@@ -40,8 +39,8 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b);
 t_list	*ft_almostlastnode(t_list *lst);
 int		ft_check_order(t_list **stack_a);
 void    ft_sort(t_list **stack_a);
-void	ft_sort_three(t_list *stack_a);
-void	ft_sort_fourtoseven(t_list *stack_a);
+void	ft_sort_three(t_list **stack_a);
+void	ft_sort_fourtoseven(t_list **stack_a);
 void	ft_put_index(t_list **stack_a);
 
 

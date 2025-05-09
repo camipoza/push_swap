@@ -6,13 +6,13 @@
 #    By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 18:20:36 by cpoza-ra          #+#    #+#              #
-#    Updated: 2025/05/06 18:47:04 by cpoza-ra         ###   ########.fr        #
+#    Updated: 2025/05/09 13:03:28 by cpoza-ra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3
 INCLUDE = -I. #directorio de cabeceras (dir actual)
 SRC_FILES = main.c parsing.c utils.c movements_push.c movements_swap.c movements_rotate.c movements_rev_rotate.c order.c
 OBJ_FILES = $(SRC_FILES:%.c=%.o)
