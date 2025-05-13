@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:52:05 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/08 18:17:47 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:02:05 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void    ft_push(t_list **stack_src, t_list **stack_dest)
     t_list *aux;
 	
 	aux = *stack_src;
+	*stack_src = (*stack_src)->next;
 	aux->next = NULL;
 	ft_lstadd_front(stack_dest, aux);
-	*stack_src = (*stack_src)->next;
 }
 void    ft_pa(t_list **stack_b, t_list **stack_a)
 {
