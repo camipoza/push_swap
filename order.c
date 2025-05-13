@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:03:20 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/13 17:27:09 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/13 18:35:09 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,15 @@ void	ft_sort_fourtofive(t_list *stack_a, t_list *stack_b)
 	while (iter++ < len - 3)
 	{
 		min_index = ft_get_min_index(stack_a);
-		if (ft_count_rot(stack_a, min_index) <= len - ft_count_rot(stack_a, min_index))
+		if (ft_count_rot(stack_a, min_index) <= len / 2)
 			while(stack_a->index != min_index)
 				ft_ra(&stack_a);
-			ft_print_list(stack_a);
 		else
 			while(stack_a->index != min_index)
 				ft_rra(&stack_a);
 		if((ft_check_order(&stack_a)) && (ft_lstsize(stack_b) == 0))
 			return;
 		ft_pb(&stack_a, &stack_b);
-		len--;
 	}
 	ft_sort_three(&stack_a);
 	while(ft_lstsize(stack_b) != 0)

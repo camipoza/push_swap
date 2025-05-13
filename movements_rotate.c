@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:45:07 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/08 18:17:12 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/13 18:14:47 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void  ft_rotate(t_list **stack)
 	if(ft_lstsize(*stack) < 2)
 		return;
 	aux = *stack;
+	*stack = (*stack)->next;
 	aux->next = NULL;
 	ft_lstadd_back(stack, aux);
-	*stack = (*stack)->next;
 }
 
 void ft_ra(t_list **stack_a)
