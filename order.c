@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:03:20 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/13 18:35:09 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:26:32 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ void	ft_sort_three(t_list **stack_a)
 	{
 		if((*stack_a)->content > third->content)
 			ft_ra(stack_a);
-		if((*stack_a)->content < third->content)
+		else if((*stack_a)->content < third->content)
 			ft_sa(stack_a);
-		if ((*stack_a)->next->content > third->content)
+		else  if ((*stack_a)->next->content > third->content)
 			ft_sa(stack_a), ft_rra(stack_a);
 	}
 }
 
-void	ft_sort_fourtofive(t_list *stack_a, t_list *stack_b)
+void	ft_sort_fourtoseven(t_list *stack_a, t_list *stack_b)
 {
 	int len;
 	int	iter;
@@ -97,13 +97,13 @@ void	ft_sort_fourtofive(t_list *stack_a, t_list *stack_b)
 	 else if (ft_lstsize(*stack_a) > 3 && ft_lstsize(*stack_a) <= 7)
 	{
 		ft_put_index(stack_a);
-		ft_printf("sort 4-5\n");
-		ft_sort_fourtofive(*stack_a, *stack_b);
+		ft_printf("sort 4-7\n");
+		ft_sort_fourtoseven(*stack_a, *stack_b);
 	}
 
 	 else if (ft_lstsize(*stack_a) > 5)
 	{
 		ft_put_index(stack_a);
-		//ft_ksort(stack_a);
+		//ft_ksort1(stack_a, stack_b);
 	} 
 }
