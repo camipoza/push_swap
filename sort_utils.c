@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 13:33:09 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/19 16:10:24 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:36:37 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,17 @@ int	ft_get_min_index(t_list *stack)
 		current = current->next;
 	}
 	return(min_index);
+}
+
+int	ft_get_target_index(t_list *stack, int target_index)
+{
+	t_list	*current;
+
+	current = stack;
+	while (current->next != NULL)
+		while(current->index != target_index)
+			current = current->next;
+	return(current->index);
 }
 int	ft_count_rot(t_list *stack, int index)
 {
@@ -76,13 +87,5 @@ int		ft_sqrt(int num)
 	if(i * i > num)
 		if((i * i - num) < (num - (i - 1) * (i - 1)))
 			return (i);
-		return (i - 1);
-}
-
-int main(void)
-{
-	int num = 7;
-
-	printf("%d", ft_sqrt(num));
-	return(0);
+	return (i - 1);
 }

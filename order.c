@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:03:20 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/19 15:55:34 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:31:43 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,37 +66,65 @@ void	ft_sort_fourtosix(t_list **stack_a, t_list **stack_b)
 void	ft_ksort1(t_list **stack_a, t_list **stack_b, int len_a)
 {
 	int		i;
-	int		range;
+	int		k;
 
-	range =  (ft_sqrt(len_a) * 1.4);
+	i = 0;
+	k =  (ft_sqrt(len_a) * 1.4);
+	while(*stack_a)
+	{
+		if((*stack_a)->index < i)
+		{
+			ft_pb(stack_a, stack_b);
+			i++;
+		}
+		else if((*stack_a)->index < i + k)
+		{
+			ft_pb(stack_a, stack_b);
+			ft_rb(stack_b);
+			i++;
+		}
+		else
+			ft_ra(stack_a);
+	}
+}
+void	ft_ksort2(t_list **stack_a, t_list **stack_b, int len_b)
+{
+	int		max_index;
 	
-	
+	max_index = ft_get_target_index(*stack_b, len_b - 1);
+	while (max_index > 0)
+	{
+		if (ft_count_rot(*stack_b, max_index) <= len_b / 2)
+			while((*stack_b)->index != max_index)
+				ft_rb(stack_b);
+		else
+			while((*stack_b)->index != max_index)
+				ft_rrb(stack_b);
+		ft_pb(stack_a, stack_b);
+	}
 }
 
  void    ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	int len_a;
+	int len;
 
-	len_a = ft_lstsize(*stack_a);
-	if ( len_a == 2)
+	len = ft_lstsize(*stack_a);
+	if ( len == 2)
 		ft_sa(stack_a), ft_printf("sort 2\n");
 		
-	else if (len_a == 3)
+	else if (len == 3)
 		ft_sort_three(stack_a), ft_printf("sort 3\n"); 
 		
-	 else if (len_a > 3 && len_a <= 6)
+	 else if (len > 3 && len <= 6)
 	{
 		ft_put_index(stack_a);
-		//ft_print_list(*stack_a);
-		ft_printf("sort 4-6\n");
-		ft_sort_fourtosix(stack_a, stack_b);
+		ft_sort_fourtosix(stack_a, stack_b), ft_printf("sort 4-6\n");
 	}
 
-	 else if (len_a >= 7)
+	 else if (len >= 7)
 	{
 		ft_put_index(stack_a);
-		ft_ksort1(stack_a, stack_b, len_a);
-		//ft_ksort2(stack_a, stack_b);
-
+		ft_ksort1(stack_a, stack_b, len);
+		ft_ksort2(stack_a, stack_b, len);
 	} 
 }
