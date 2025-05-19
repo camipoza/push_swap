@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:27:54 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/15 17:36:38 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:54:35 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ft_sort_fourtosix(t_list **stack_a, t_list **stack_b);
 void	ft_put_index(t_list **stack);
 int	ft_get_min_index(t_list *stack);
 int	ft_count_rot(t_list *stack, int index);
+void	ft_ksort1(t_list **stack_a, t_list **stack_b, int len_a);
 
 
 #endif

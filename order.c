@@ -6,35 +6,12 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:03:20 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/15 18:24:02 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:55:34 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_check_order(t_list **stack_a)
-{
-    t_list  *check;
-    t_list  *comp;
-
-    check = *stack_a;
-    while (check->next != NULL)
-	{
-    	comp = check->next;
-		while (comp != NULL)
-    	{
-			if (check->content > comp->content)
-			{
-				//ft_printf("desordenaos\n");
-           		return(0);
-			}
-			comp = comp->next;
-    	}
-   		 check = check->next;
-	}
-	//ft_printf("ordenaos\n");
-	return(1);
-}
 void	ft_sort_three(t_list **stack_a)
 {
 	t_list	*third;
@@ -86,16 +63,28 @@ void	ft_sort_fourtosix(t_list **stack_a, t_list **stack_b)
 	while(ft_lstsize(*stack_b) != 0)
 		ft_pa(stack_b, stack_a);
 }
+void	ft_ksort1(t_list **stack_a, t_list **stack_b, int len_a)
+{
+	int		i;
+	int		range;
+
+	range =  (ft_sqrt(len_a) * 1.4);
+	
+	
+}
 
  void    ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) == 2)
+	int len_a;
+
+	len_a = ft_lstsize(*stack_a);
+	if ( len_a == 2)
 		ft_sa(stack_a), ft_printf("sort 2\n");
 		
-	else if (ft_lstsize(*stack_a) == 3)
+	else if (len_a == 3)
 		ft_sort_three(stack_a), ft_printf("sort 3\n"); 
 		
-	 else if (ft_lstsize(*stack_a) > 3 && ft_lstsize(*stack_a) <= 6)
+	 else if (len_a > 3 && len_a <= 6)
 	{
 		ft_put_index(stack_a);
 		//ft_print_list(*stack_a);
@@ -103,9 +92,11 @@ void	ft_sort_fourtosix(t_list **stack_a, t_list **stack_b)
 		ft_sort_fourtosix(stack_a, stack_b);
 	}
 
-	 else if (ft_lstsize(*stack_a) >= 7)
+	 else if (len_a >= 7)
 	{
 		ft_put_index(stack_a);
-		//ft_ksort1(stack_a, stack_b);
+		ft_ksort1(stack_a, stack_b, len_a);
+		//ft_ksort2(stack_a, stack_b);
+
 	} 
 }
