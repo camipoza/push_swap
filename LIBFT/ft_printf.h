@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 16:46:26 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/02/21 14:32:07 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:01:07 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 # include <unistd.h>
 # include <stdarg.h>
+# include "libft.h"
 
 int	ft_printf(char const *str, ...);
 int	ft_percent(va_list arg, char str);

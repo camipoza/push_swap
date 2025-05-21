@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/15 18:16:57 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/21 19:41:09 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	ft_put_index(t_list **stack_a)
 	{
 		i = 0;
 		comp = *stack_a;
-		while(comp != NULL)
+		while (comp != NULL)
 		{
-			if(check->content > comp->content)
+			if (check->content > comp->content)
 				i++;
 			comp = comp->next;
 		}
@@ -72,6 +72,7 @@ void	ft_put_index(t_list **stack_a)
 		check = check->next;
 	}
 }
+
 t_list	*ft_almostlastnode(t_list *lst)
 {
 	if (!lst)

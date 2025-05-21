@@ -6,36 +6,38 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:45:28 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/09 14:37:12 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:03:00 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void  ft_rev_rotate(t_list **stack)
+static void	ft_rev_rotate(t_list **stack)
 {
-    t_list *aux;
-    t_list *last;
-	
-    if(ft_lstsize(*stack) < 2)
-		return;
+	t_list	*aux;
+	t_list	*last;
+
+	if (ft_lstsize(*stack) < 2)
+		return ;
 	aux = ft_almostlastnode(*stack);
-    last = ft_lstlast(*stack);
-    ft_lstadd_front(stack, last);
-	aux->next = NULL;	
+	last = ft_lstlast(*stack);
+	ft_lstadd_front(stack, last);
+	aux->next = NULL;
 }
-void ft_rra(t_list **stack_a)
+
+void	ft_rra(t_list **stack_a)
 {
 	ft_rev_rotate(stack_a);
 	ft_printf("rra\n");
-	//ft_print_list(*stack_a);
 }
-void ft_rrb(t_list **stack_b)
+
+void	ft_rrb(t_list **stack_b)
 {
 	ft_rev_rotate(stack_b);
 	ft_printf("rrb\n");
 }
-void ft_rrr(t_list **stack_a, t_list **stack_b)
+
+void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
 	ft_rev_rotate(stack_a);
 	ft_rev_rotate(stack_b);

@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/15 18:12:35 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/21 19:51:00 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,26 @@ t_list	*ft_putinstack(int num, t_list *a)
 	ft_lstadd_back(&a, node);
 	return (a);
 }
-/* int	ft_checklong(long n)
+
+int	ft_checklong(char *str)
 {
-	if (n < -2147483648 || n > 2147483647)
+	int	count;
+
+	count = 0;
+	while (*str)
+	{
+		if (*str == '0')
+			str++;
+		if (*str != '0')
+		{
+			count++;
+			str++;
+		}
+	}
+	if (count > 10)
 		return (0);
-	else
-		return (1);
-} */
+	return (1);
+}
 
 t_list	*ft_parsing(char **arg)
 {
@@ -55,6 +68,8 @@ t_list	*ft_parsing(char **arg)
 	while (*arg)
 	{
 		if (!ft_checknum(*arg))
+			ft_error_oops();
+		if (!ft_checklong(*arg))
 			ft_error_oops();
 		n = ft_atol(*arg);
 		a = ft_putinstack(n, a);

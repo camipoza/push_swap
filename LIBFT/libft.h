@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:28:46 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/19 18:30:13 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:12:11 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
-
+# include "ft_printf.h"
 
 int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
