@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/23 18:44:23 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 20:08:28 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_checknum(char *str)
 	{
 		if (*str == '-' || *str == '+')
 			str++;
-		if (!str)
+		if (!*str)
 			return (0);
 		while (ft_isdigit(*str))
 			str++;

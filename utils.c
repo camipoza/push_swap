@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/23 18:01:07 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:25:07 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error_oops(void)
 {
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	exit(EXIT_SUCCESS);
 }
 
