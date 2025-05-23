@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:52:01 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/21 19:33:52 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:47:05 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ long	ft_atol(const char *str)
 		result = result * 10 + (*str - '0');
 		str++;
 	}
-	if (result < -2147483648 || result > 2147483647)
+	if ((result * sign) < -2147483648 || (result * sign) > 2147483647)
 	{
-		ft_printf("Error\n");
+		ft_printf("Erroooor\n");
 		exit(0);
 	}
 	return (sign * result);

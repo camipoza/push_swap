@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 19:12:47 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/23 17:58:56 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:44:23 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,14 @@ int	ft_checklong(char *str)
 	int	count;
 
 	count = 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && *str == '0')
+		str++;
 	while (*str)
 	{
-		if (*str == '0')
-			str++;
-		if (*str != '0')
-		{
-			count++;
-			str++;
-		}
+		count++;
+		str++;
 	}
 	if (count > 10)
 		return (0);
