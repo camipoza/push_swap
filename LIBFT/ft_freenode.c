@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_freenode.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 19:26:51 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/23 18:05:04 by cpoza-ra         ###   ########.fr       */
+/*   Created: 2025/05/23 17:41:54 by cpoza-ra          #+#    #+#             */
+/*   Updated: 2025/05/23 17:43:06 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_freenode(t_list **lst)
 {
-	int		nums;
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_list	*temp;
 
-	nums = 0;
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 2)
-		return (1);
-	stack_a = ft_parsing(argv);
-	ft_check_dup(stack_a);
-	if (!ft_check_order(&stack_a))
-		ft_sort(&stack_a, &stack_b);
-	ft_freenode(&stack_a);
-	ft_freenode(&stack_b);
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
+	*lst = NULL;
 }

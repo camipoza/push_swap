@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:28:46 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/21 17:12:11 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 17:44:25 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(int));
 void	ft_lstclear(t_list **lst, void (*del)(int));
 void	ft_lstiter(t_list *lst, void (*f)(int));
 t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
+void	ft_freenode(t_list **lst);
 
 #endif

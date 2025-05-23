@@ -6,7 +6,7 @@
 /*   By: cpoza-ra <cpoza-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 18:59:34 by cpoza-ra          #+#    #+#             */
-/*   Updated: 2025/05/21 19:41:09 by cpoza-ra         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:01:07 by cpoza-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error_oops(void)
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 7);
 	exit(EXIT_SUCCESS);
 }
 
@@ -30,7 +30,10 @@ int	ft_check_dup(t_list *stack_a)
 		while (comp != NULL)
 		{
 			if (current->content == comp->content)
-				ft_error_oops ();
+			{
+				ft_freenode(&stack_a);
+				ft_error_oops();
+			}
 			comp = comp->next;
 		}
 		current = current->next;
